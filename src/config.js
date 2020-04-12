@@ -1,4 +1,6 @@
 export default {
+  MAX_ATTACHMENT_SIZE: 5000000,
+  STRIPE_KEY: "pk_test_9w0hQZtoT0ZJpLKWs0z3PWEx00Eesbevfm",
   s3: {
     REGION: "eu-central-1",
     BUCKET: "jone-notes-app-uploads"
@@ -14,3 +16,4 @@ export default {
     IDENTITY_POOL_ID: "eu-central-1:0b59ff9d-225b-4649-bade-1a7378179e43"
   }
 };
+
