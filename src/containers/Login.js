@@ -6,6 +6,7 @@ import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
 import "./Login.css";
+import FacebookButton from "../components/FacebookButton";
 
 export default function Login() {
   const { userHasAuthenticated } = useAppContext();
@@ -18,6 +19,10 @@ export default function Login() {
   function validateForm() {
     return fields.email.length > 0 && fields.password.length > 0;
   }
+  
+  handleFbLogin = () => {
+    this.props.userHasAuthenticated(true);
+  };
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -37,6 +42,10 @@ export default function Login() {
     <div className="Login">
       <form onSubmit={handleSubmit}>
         <FormGroup controlId="email" bsSize="large">
+		  <FacebookButton
+			onLogin={this.handleFbLogin}
+		  />
+	      <hr />
           <ControlLabel>Email</ControlLabel>
           <FormControl
             autoFocus
